@@ -1,4 +1,6 @@
-import { TODO_STATE } from '../static/enumerations.js'
+import {
+  TODO_STATE
+} from '../static/enumerations.js'
 import * as types from './mutation-types'
 
 export const todos = {
@@ -21,6 +23,8 @@ export const todos = {
         payload.todo.state = TODO_STATE.DONE
       } else if (payload.todo.state === TODO_STATE.DONE) {
         payload.todo.state = TODO_STATE.WORKING
+      } else {
+        console.error('予期しないTODO_STATEが渡されました。');
       }
     }
   },
